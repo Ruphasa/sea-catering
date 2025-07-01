@@ -54,14 +54,15 @@ Ensure frontend assets are compiled:
 `npm run dev`
 
 
+
+## Creating an Admin Account
+The application includes admin functionality accessible via the /admin route. Follow these steps to create an admin account:
+
 I've create 1 admin account
 Email       : `admin@gmail.com`
 Password    : `Nimda098!%))`
 
 But if you another
-
-## Creating an Admin Account
-The application includes admin functionality accessible via the /admin route. Follow these steps to create an admin account:
 
 - go to database folder
 - then open seeder folder
