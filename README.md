@@ -26,31 +26,32 @@ Before you begin, ensure you have the following installed on your system:
 
 # 1. Installation
 Clone the Repository Open your terminal and run:
+`git clone https://github.com/Ruphasa/sea-catering`
 
 # 2. Install PHP Dependencies 
 Install the required PHP packages using Composer:
-<composer install>
+`composer install`
 
 # 3. Install Frontend Dependencies 
 Install Node.js dependencies and build assets:
-<npm install>
-<npm run build>
+`npm install`
+`npm run build`
 
 # 4. Configure Environment
 Copy the .env.example file to .env and configure it with your settings (see Environment Variables below):
-<cp .env.example .env>
+`cp .env.example .env`
 
 # 5. Generate Application Key
 Generate a unique application key:
-<php artisan key:generate>
+`php artisan key:generate`
 
 # 6. Run Database Migrations
 Set up the database schema and seed initial data:
-<php artisan migrate --seed>
+`php artisan migrate --seed`
 
 # 7. Install Node Modules 
 Ensure frontend assets are compiled:
-<npm run dev>
+`npm run dev`
 
 
 I've create 1 admin account
@@ -71,7 +72,7 @@ The application includes admin functionality accessible via the /admin route. Fo
 `User::create(['name' => 'yourname','email' => 'your@email.com','password' => bcrypt('password'),'is_admin'=> true,]);`
 
 # Artisa Refresh :
-<php artisan:fresh --seed>
+`php artisan:fresh --seed`
 
 # Usage
 - Home: View the main page at /.
