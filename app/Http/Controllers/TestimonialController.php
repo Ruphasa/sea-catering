@@ -14,19 +14,25 @@
       }
 
       public function store(Request $request)
-      {
-          $request->validate([
-              'name' => 'required|string|max:255',
-              'review' => 'required|string',
-              'rating' => 'required|integer|between:1,5',
-          ]);
+    {
+        $request->validate([
+            'meal_plan_id' => 'required|exists:meal_plans,id',
+            'review' => 'required|string|max:1000',
+            'rating' => 'required|integer|between:1,5',
+        ]);
 
-          Testimonial::create([
-              'name' => $request->name,
-              'review' => $request->review,
-              'rating' => $request->rating,
-          ]);
+        $testimonial = new Testimonial();
+        $testimonial->meal_plan_id = $request->meal_plan_id;
+        $testimonial->user_id = auth()->id();
+        $testimonial->review = $request->review;
+        $testimonial->rating = $request->rating;
+        $testimonial->save();
 
-          return redirect()->route('testimonials')->with('success', 'Testimonial submitted successfully!');
-      }
+        // Update average rating for meal plan (opsional)
+        $mealPlan = $testimonial->mealPlan;
+        $mealPlan->rating = $mealPlan->testimonials()->avg('rating');
+        $mealPlan->save();
+
+        return response()->json(['success' => true, 'message' => 'Testimony submitted!']);
+    }
   }

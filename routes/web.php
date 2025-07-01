@@ -26,6 +26,7 @@ Route::get('/testimonials', [TestimonialController::class, 'index'])->name('test
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/subscribe', [SubscriptionController::class, 'store']);
+    Route::post('/testimony', [TestimonialController::class, 'store'])->name('testimony.store')->middleware('auth');
     Route::patch('/subscriptions/{subscription}/pause', [SubscriptionController::class, 'pause'])->name('subscriptions.pause');
     Route::delete('/subscriptions/{subscription}/cancel', [SubscriptionController::class, 'cancel'])->name('subscriptions.cancel');
 });

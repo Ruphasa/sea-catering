@@ -10,10 +10,14 @@
       {
           Schema::create('testimonials', function (Blueprint $table) {
               $table->id();
-              $table->string('name');
+              $table->unsignedBigInteger('user_id');
+              $table->unsignedBigInteger('meal_plan_id');
               $table->text('review');
               $table->integer('rating');
               $table->timestamps();
+              
+              $table->foreign('user_id')->references('id')->on('users');
+              $table->foreign('meal_plan_id')->references('id')->on('meal_plans');
           });
       }
 

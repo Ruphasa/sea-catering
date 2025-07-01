@@ -16,8 +16,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
 
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('build/assets/app-CFA7UN_V.css') }}">
+    <script src="{{ asset('build/assets/app-DaBYqt0m.js') }}" defer></script>
 </head>
 
 <body class="font-sans antialiased">
