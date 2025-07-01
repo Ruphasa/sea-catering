@@ -11,6 +11,14 @@
         @endif
         <form method="POST" action="{{ route('subscribe') }}">
             @csrf
+            {{-- input phone number --}}
+            <div class = "mb-4">
+                <label class="block text-gray-700">* Phone Number</label>
+                <input type="text" name="phone" class="w-full p-2 border rounded" required>
+                @error('phone')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
+            </div>
             <div class="mb-4">
                 <label class="block text-gray-700">* Name</label>
                 <input type="text" name="name" class="w-full p-2 border rounded" required>

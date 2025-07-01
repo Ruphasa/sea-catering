@@ -19,6 +19,7 @@ class SubscriptionController extends Controller
     {
         try {
             $request->validate([
+                'phone' => 'required|string|max:15',
                 'meal_plan_id' => 'required|exists:meal_plans,id',
                 'meal_types' => 'required|array|min:1',
                 'delivery_days' => 'required|array|min:1',
@@ -38,6 +39,7 @@ class SubscriptionController extends Controller
 
             $subscription = new Subscription();
             $subscription->user_id = auth()->id();
+            $subscription->phone = $request->phone;
             $subscription->meal_plan_id = $request->meal_plan_id;
             $subscription->meal_types = implode(', ', $request->meal_types);
             $subscription->delivery_days = implode(', ', $request->delivery_days);

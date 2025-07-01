@@ -11,6 +11,7 @@
           Schema::create('subscriptions', function (Blueprint $table) {
               $table->id();
               $table->string('user_id');
+              $table->string('phone');
               $table->string('meal_plan_id');
               $table->string('meal_types');
               $table->string('delivery_days');
