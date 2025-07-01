@@ -1,3 +1,5 @@
+`note : I rush this code in one go so i just need 1 commit :)`
+
 ## SEA Catering Website
 Welcome to the SEA Catering Website, a Laravel-based application for managing catering services, including user dashboards and admin functionalities. This README provides detailed instructions to set up and run the application on your local machine.
 
